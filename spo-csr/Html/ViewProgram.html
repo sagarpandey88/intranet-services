@@ -1,0 +1,116 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>View Program</title>
+<style>
+.csr-program div{
+	padding:5px;
+}
+#csr-program-image{
+	width:100%
+}
+.fab {
+      padding: 10px 0px 10px 8px;
+    /* font-size: 30px; */
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+
+}
+.fab:hover, .fa:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook-f {
+  background: #3B5998;
+  color: white;
+}
+.fa-yammer{
+  background: #3B5998;
+  color: white;
+  padding:10px 0px 10px 11px;
+}
+.csr-share-buttons a{
+	text-decoration:none;
+}
+.fa-files-o{
+	 background: #3B5998;
+  color: white;
+  padding:	10px 17px;
+
+}
+</style>
+</head>
+
+<body>
+<div class="row csr-program p-2">
+<div class="col-12 col-md-6">
+<img src="" id="csr-program-image"/>
+
+</div>
+
+<div class="col-12 col-md-6">
+
+<div class="col-12" id="csr-program-title"></div>
+<div class="col-12" id="csr-program-desc"></div>
+<div class="col-12" id="csr-program-location"><strong>Location :</strong></div>
+<div class="col-12" id="csr-program-ngo"><strong>NGO :</strong> </div>
+<div class="col-12" id="csr-program-venue"><strong>Venue :</strong> </div>
+<div class="col-12" id="csr-program-start-date"><strong>Start Date :</strong> </div>
+<div class="col-12" id="csr-program-end-date"><strong>End Date :</strong> </div>
+<div class="col-12" id="csr-program-manager">For any queries please contact </div>
+<div class="col-12 csr-buttons btn-group text-right">
+<button type="button" class="btn btn-sm btn-outline-secondary d-none" id="csr-program-edit">Edit Program</button>
+<button type="button" class="btn btn-sm btn-outline-secondary d-none" id="csr-program-attendance">Registered Volunteers</button>
+<button type="button" class="btn btn-sm btn-outline-secondary" id="csr-program-action"></button>
+</div>
+<div class="col-12 text-right csr-share-buttons">
+<a title="Share with fb@work" id="csr-fb-share"  onclick="window.open(this.href,'targetWindow','toolbar=no,location=0,status=no,menubar=no,scrollbars=yes,resizable=yes,width=600,height=600'); return false;">
+   <i class="fab fa-facebook-f pr-2"></i>
+</a>
+
+<a title="Share with yammer" class="csr-yammer-share" target="_blank">
+  <i class="fab fa-yammer pr-2"></i>
+</a>
+
+<a title="Copy link" class="csr-copy-link" onclick="copyToClipboard()" data-toggle="popover" data-content="Some content inside the popover">
+  <i class="fa fa-files-o"></i>
+</a>
+
+</div>
+
+</div>
+
+</div>
+<script type="text/javascript" src="https://ORGANIZATIONonline.sharepoint.com/sites/CSR/SiteAssets/js/jquery.min.js"></script>
+<script type="text/javascript" src="https://s0.assets-yammer.com/assets/platform_social_buttons.min.js"></script>
+<script type="text/javascript">yam.platform.yammerShare();</script>
+<script>
+var shareUrl="https://ORGANIZATION.facebook.com/sharer.php?display=page&u="+window.location.href;
+document.getElementById("csr-fb-share").href = shareUrl;
+var options = {
+    customButton : true, //false by default. Pass true if you are providing your own button to trigger the share popup
+    classSelector: 'csr-yammer-share'//if customButton is true, you must pass the css class name of your button (so we can bind the click event for you)
+  //  defaultMessage: 'My custom Message', //optionally pass a message to prepopulate your post
+    }; 
+  yam.platform.yammerShare(options);
+  
+  function copyToClipboard() {
+  var $temp = $("<input>");
+  $("body").append($temp);
+  $temp.val(window.location.href).select();
+  document.execCommand("copy");
+  $temp.remove();
+}
+
+  $(document).ready(function(){
+ // $('[data-toggle="popover"]').popover(); 
+});
+
+</script>
+</body>
+
+</html>
