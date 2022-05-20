@@ -9,3 +9,10 @@ Intranet Services is a package of Intranet Portal , Doc Management, Workflows , 
 |3| Document Management  |Pending|
 |4| Workflows  |Pending|
 |5| CSR Portal as a Service  |Pending|
+
+
+
+# Classic SharePoint Online based CSR Portal
+
+![image](https://user-images.githubusercontent.com/30863296/169513551-7e71498e-d2dc-438e-af2c-e7dcb9e7aad3.png)
+
